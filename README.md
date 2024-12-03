@@ -32,7 +32,7 @@ This map was useful for extracting the following statistics:
 Results: Timeline of posts and comments
 ---------------------------------------
 
-![timeline.png](Timeline of ICLR 2025 posts and comments.)
+![Timeline of ICLR 2025 posts and comments.](timeline.png)
 
 One aspect of the 'volume' of discussion is the number of posts by authors
 and reviewers each day. I was interested in when authors and reviewers post
@@ -89,7 +89,7 @@ Interesting!
 Results: Wordcounts for different fields
 ----------------------------------------
 
-![timeline.png](Timeline of ICLR 2025 posts and comments.)
+![Histogram of word counts for ICLR 2025 posts and comments.](wordcounts.png)
 
 Another apsect of the 'volume' of discussion is the number of words in each
 comment. Actually, what I was really interested in was the number of words *in
