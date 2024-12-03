@@ -13,21 +13,8 @@ on OpenReview. I took inspiration
   [prior](https://github.com/shaohua0116/ICLR2020-OpenReviewData)
   [work](https://github.com/maxxu05/openreview_summarizereviews)
 and wrote a script to download all abstracts and all comments via the
-  [OpenReview API](https://docs.openreview.net/reference/api-v2).
-
-Anatomy of an OpenReview Forum
-------------------------------
-
-The OpenReview API lets you easily download abstracts. If you pass the right
-configuration options you can also get all top-level comments or all comments
-and sub-comments. But you need to know the structure of the response to get
-to the data you want.
-
-Some of the response structure is documented
-  [in the API reference](https://docs.openreview.net/reference/api-v2/entities/note/fields). 
-In practice, there are more fields; I dissected an example and documented the
-results in [iclr2025api.md](iclr2025api.md).
-This map was useful for extracting the following statistics:
+  [OpenReview API](https://docs.openreview.net/reference/api-v2),
+then did battle with matplotlib for a couple of hours, *et voilà.*
 
 Results: Timeline of posts and comments
 ---------------------------------------
@@ -136,6 +123,20 @@ Observations:
 This puts my experience as a reviewer into perspective... I wrote pretty long
 reviews. However, in order to preserve anonymity, I will neither confirm nor
 deny that I am responsible for that 7000 word review.
+
+Anatomy of an OpenReview Forum Object
+-------------------------------------
+
+The OpenReview API lets you easily download abstracts. If you pass the right
+configuration options you can also get all top-level comments or all comments
+and sub-comments. But you need to know the structure of the response to get
+to the data you want.
+
+Some of the response structure is documented
+  [in the API reference](https://docs.openreview.net/reference/api-v2/entities/note/fields). 
+In practice, there are more fields; I dissected an example and documented the
+results in [iclr2025api.md](iclr2025api.md).
+This map was useful for extracting the above statistics.
 
 Future work
 -----------
