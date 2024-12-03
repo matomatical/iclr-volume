@@ -44,8 +44,8 @@ The above plots the number of each type of event per day (logarithmic scale
 for the counts, the spike at the review deadline is really sharp on a linear
 scale).
 
-NOTE: The results for 2024-12-03 are not final because the data was
-downloaded at around 1AM AoE that day, and it's still being generated.
+NOTE: The timeline only goes until 2024-12-02 because I haven't collected
+data for subsequent days yet. I will update this later.
 
 Observations:
 
@@ -157,14 +157,16 @@ more questions about volume I would be curious to see plots for:
 * As mentioned above, how common is it for a review to go unanswered by
   authors, or for an author's rebuttals to go ignored by reviewers? This has
   happened for several reviewers on both of my submissions this year, which
-  is very disappointing, but I don't actually know how typical it is.
+  is very disappointing, but I don't actually know how typical it is. Some
+  colleagues have suggested it's to be expected. The API can tell us!
 * Where is the most deeply nested comment tree? Then again, I don't always
   use the 'reply to' functionality of OpenReview, and maybe some others don't
   either; it would also be interesting to see the review with greatest number
-  of total replies!
+  of total 'child' posts!
 * Is it possible to extract paper revision times from the API, to see when
   people (1) uploaded PDFs compared to the deadline, and (2) uploaded
-  revisions as part of the rebuttal period?
+  revisions as part of the rebuttal period? I want to see how sharp a
+  conference deadline is globally (it always feels sharp locally).
 * Most prior analyses I've seen have emphasised review scores. I'd be
   interested in understanding connections between scores and volume, building
   off the findings from 
@@ -180,7 +182,7 @@ way:
 ```
 python -m venv iclrdata.venv
 source iclrdata.venv/bin/activate
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 Then, download the reviews data.
@@ -197,4 +199,5 @@ python main.py wordcount
 ```
 
 Note: if using this script in future, be aware that the API might have
-changed. Good luck!
+changed. Also the structure of forums might change for future iterations of
+the conference. Good luck!
