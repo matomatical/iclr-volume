@@ -14,7 +14,8 @@ on OpenReview. I took inspiration
   [work](https://github.com/maxxu05/openreview_summarizereviews)
 and wrote a script to download all abstracts and all comments via the
   [OpenReview API](https://docs.openreview.net/reference/api-v2),
-then did battle with matplotlib for a couple of hours, *et voilà.*
+then did battle with matplotlib and timezones for a couple of hours,
+*et voilà.*
 
 Results: Timeline of posts and comments
 ---------------------------------------
