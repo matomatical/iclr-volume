@@ -80,6 +80,11 @@ This puts my experience as a reviewer and author into perspective.
   November. This was really early, and maybe we shouldn't have pushed so
   hard. For my other paper we ran some additional experiments and submitted
   our first rebuttals by Thursday 21st, right at the first peak.
+* As an author (again), unfortunately several of my reviewers completely
+  failed to engage with the discussion period, even though we left plenty of
+  time after our rebuttals. One thing that is not clear from this plot is how
+  many reviews or rebuttals go unanswered by reviewers. I wonder how common
+  this is.
 * As a reviewer (again), I started getting back to my authors (those who had
   posted rebuttals) from November 26th. This was just after the reviewer
   activity peak, and maybe I could have found time earlier.
@@ -119,7 +124,9 @@ Observations:
   that perfectly matches my experience. Though there does appear to be a
   pretty long tail (again barely exceeding around 750).
 * As for reviews, the first four plots show the four components of the
-  review.
+  review. It matches my experience as a reviewer and as an author to see that
+  the weaknesses section appears to be the typically longest of the four
+  sections.
 * Then there is `review total` which is the aggregate of the individual
   components, the vast majority of reviews are less than 1000 words, many
   less than even 500. There are a very small number of longer reviews, going
@@ -147,6 +154,10 @@ more questions about volume I would be curious to see plots for:
   The 7000 word review received a 9-part response.
   I heard a colleague of mine who wrote a much shorter review received a
   disproportionate 6-part response.
+* As mentioned above, how common is it for a review to go unanswered by
+  authors, or for an author's rebuttals to go ignored by reviewers? This has
+  happened for several reviewers on both of my submissions this year, which
+  is very disappointing, but I don't actually know how typical it is.
 * Where is the most deeply nested comment tree? Then again, I don't always
   use the 'reply to' functionality of OpenReview, and maybe some others don't
   either; it would also be interesting to see the review with greatest number
