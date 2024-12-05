@@ -32,8 +32,7 @@ The above plots the number of each type of event per day (logarithmic scale
 for the counts, the spike at the review deadline is really sharp on a linear
 scale).
 
-NOTE: The timeline only goes until 2024-12-02 because I haven't collected
-data for subsequent days yet. I will update this later.
+NOTE: Data from 2024-12-04 is incomplete.
 
 Observations:
 

@@ -74,8 +74,8 @@ def analyse_review_timeline(
         import math
         for k in event_dates:
             count = event_dates[k][date]
-            if date == datetime.date(2024, 12, 3):
-                count = 0
+            # if date == datetime.date(2024, 12, 3):
+            #     count = 0
             event_hists[k].append(count if count else None)
 
     print("plotting timeline...")
