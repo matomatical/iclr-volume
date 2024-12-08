@@ -1,3 +1,5 @@
 *.venv
 *.pickle
 *.pdf
+*.svg
+timeline-social.png

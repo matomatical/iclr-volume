@@ -1,5 +1,7 @@
-ICLR 2025: Volumetric Analaysis of Review Process
-=================================================
+Volumetric analysis of the ICLR 2025 review process
+===================================================
+
+*Cross-posted from [my personal website](https://far.in.net/iclr2025-volume).*
 
 I was a reviewer for ICLR 2025. I spent a lot of time writing my reviews and
 engaging with the review process. Much more than (most of) the reviews on my
@@ -17,10 +19,28 @@ and wrote a script to download all abstracts and all comments via the
 then did battle with matplotlib and timezones for a couple of hours,
 *et voilà.*
 
-Results: Timeline of posts and comments
----------------------------------------
+Anatomy of an OpenReview forum
+------------------------------
 
-![Timeline of ICLR 2025 posts and comments.](timeline.png)
+The OpenReview API lets you easily download abstracts. If you pass the right
+configuration options you can also get all top-level comments or all comments
+and sub-comments. But you need to know the structure of the response to get
+to the data you want.
+
+Some of the response structure is documented
+  [in the API reference](https://docs.openreview.net/reference/api-v2/entities/note/fields). 
+In practice, there are more fields; I dissected an example and documented the
+results in [iclr2025api.md](iclr2025api.md).
+This map was useful for extracting the following statistics.
+
+
+Timeline of posts and comments
+------------------------------
+
+<img
+  src="timeline.png"
+  alt="Timeline of ICLR 2025 posts and comments."
+/>
 
 One aspect of the 'volume' of discussion is the number of posts by authors
 and reviewers each day. I was interested in when authors and reviewers post
@@ -32,21 +52,19 @@ The above plots the number of each type of event per day (logarithmic scale
 for the counts, the spike at the review deadline is really sharp on a linear
 scale).
 
-NOTE: Data from 2024-12-04 is incomplete.
-
 Observations:
 
 * Most reviews happen shortly before the review deadline. A substantial
   number of reviews occur in the emergency period after that deadline. A
   smaller number (but still dozens) take even longer, with one review posted
-  on the final day!
+  on the final day of the discussion period!
 * I was expecting an even sharper spike in submissions around the original
   submission deadline. However, it's not as sharp there. Probably this is
   because the real push is to get the full paper in by the full paper
   submission deadline. This script doesn't see when posts were revised to
   include a PDF.
 * The author--reviewer discussion period is characterised by several peaks in
-  author arctivity: First, immediately after reviews are released there is a
+  author activity: First, immediately after reviews are released there is a
   spate of withdrawals.
   Then, authors begin replying, with the most active day about 10 days into
   the discussion period. Reviewers become gradually more responsive, and
@@ -60,9 +78,8 @@ Observations:
 
 This puts my experience as a reviewer and author into perspective.
 
-* As a reviewer, I submitted three reviews, approximately one the day before
-  the review deadline, one the day of the deadline, and one the day after.
-  It seems this is pretty typical.
+* As a reviewer, I submitted three reviews, respectively the day before, of,
+  and after the deadline. It seems this is pretty typical.
 * As an author, for one paper we managed to submit rebuttals on the 17th of
   November. This was really early, and maybe we shouldn't have pushed so
   hard. For my other paper we ran some additional experiments and submitted
@@ -78,25 +95,30 @@ This puts my experience as a reviewer and author into perspective.
 
 Interesting!
 
-Results: Wordcounts for different fields
-----------------------------------------
 
-![Histogram of word counts for ICLR 2025 posts and comments.](wordcounts.png)
+Wordcounts for different fields
+-------------------------------
 
-Another apsect of the 'volume' of discussion is the number of words in each
-comment. Actually, what I was really interested in was the number of words *in
-each review,* because I had a feeling based on the length of my review and
-based on reading 
+<img
+  src="wordcounts.png"
+  alt="Histogram of word counts for ICLR 2025 posts and comments."
+/>
+
+Another aspect of the 'volume' of discussion is the number of words in each
+comment.
+Actually, what I was really interested in was the number of words *in each
+review,* because I had a feeling that I may have written the longest review
+at ICLR this year (based on the length of my reviews and based on reading 
   [Bastian Rieck's post](https://bastian.rieck.me/blog/2019/iclr_analysis/)
-that I probably wrote the longest review at ICLR this year.
-So, I scraped the contents of the reviews and comments, counted words (just
-via `len(markdown_source.split())`, nothing fancy) and histogrammed the
+about ICLR 2019 review lengths).
+So, I scraped the contents of the reviews and comments, counted words
+(nothing fancy, just `len(markdown_source.split())`) and histogrammed the
 results.
 
 Observations:
 
 * I'm not exactly sure what to make of the stats for paper title and abstract
-  lenghts. But it seems interesting that the average paper has around 9--10
+  lengths. But it seems interesting that the average paper has around 9--10
   words in the title and an abstract under 200 words in length.
 * The author comment length distribution has a somewhat weird cutoff at
   around 750 words. I think this is actually *not* surprising---OpenReview
@@ -110,11 +132,11 @@ Observations:
 * Reviewer comments are systematically shorter than author comments. Well,
   that perfectly matches my experience. Though there does appear to be a
   pretty long tail (again barely exceeding around 750).
-* As for reviews, the first four plots show the four components of the
-  review. It matches my experience as a reviewer and as an author to see that
-  the weaknesses section appears to be the typically longest of the four
-  sections.
-* Then there is `review total` which is the aggregate of the individual
+* As for reviews, the first four plots in the second row show the four
+  components of the review. It matches my experience as a reviewer and as an
+  author to see that the weaknesses section appears to be the typically
+  longest of the four sections.
+* Finally, there is `review total` which is the aggregate of the individual
   components, the vast majority of reviews are less than 1000 words, many
   less than even 500. There are a very small number of longer reviews, going
   up to... around 7000 words
@@ -124,19 +146,6 @@ This puts my experience as a reviewer into perspective... I wrote pretty long
 reviews. However, in order to preserve anonymity, I will neither confirm nor
 deny that I am responsible for that 7000 word review.
 
-Anatomy of an OpenReview Forum Object
--------------------------------------
-
-The OpenReview API lets you easily download abstracts. If you pass the right
-configuration options you can also get all top-level comments or all comments
-and sub-comments. But you need to know the structure of the response to get
-to the data you want.
-
-Some of the response structure is documented
-  [in the API reference](https://docs.openreview.net/reference/api-v2/entities/note/fields). 
-In practice, there are more fields; I dissected an example and documented the
-results in [iclr2025api.md](iclr2025api.md).
-This map was useful for extracting the above statistics.
 
 Future work
 -----------
